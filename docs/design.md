@@ -1,4 +1,4 @@
-# AI SRE Terminal — Site Design Document
+# AI SRE .dev — Site Design Document
 
 ## Problem Statement
 Site-visiting card for SRE Engineer with AI/LLM specialization. Target: recruiters and clients must see competence in action, not just read about it.

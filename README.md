@@ -1,6 +1,6 @@
 # AI SRE Terminal
 
-**[🚀 LIVE DEMO](https://oleiarme.github.io/ai-sre-terminal/)** — SRE + AI сайт-визитка с интерактивным демо классификации инцидентов.
+**[🚀 LIVE DEMO](https://oleiarme.github.io/ai-sre.dev/)** — SRE + AI сайт-визитка с интерактивным демо классификации инцидентов.
 
 Проект создан для демонстрации навыков SRE-инженера по интеграции LLM в пайплайны обработки инцидентов.
 
@@ -17,7 +17,7 @@
 ```bash
 # 1. Установи Python 3.10+
 # 2. Открой терминал в папке проекта
-cd ai-sre-terminal
+cd ai-sre.dev
 
 # 3. Установи зависимости
 pip install fastapi uvicorn
@@ -36,7 +36,7 @@ python api/main.py
 ## Структура
 
 ```
-ai-sre-terminal/
+ai-sre.dev/
 ├── .github/workflows/
 │   └── deploy.yml       # Авто-деплой на GitHub Pages
 ├── api/
