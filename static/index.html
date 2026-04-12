@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRE + AI // Lisbon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav-bar">
+    <div class="nav-inner">
+      <div class="flex items-center gap-2">
+        <span class="pulse-dot w-2 h-2 bg-accent inline-block"></span>
+        <span>SRE + AI // Lisbon</span>
+      </div>
+      <div class="hidden md:flex gap-8">
+        <span id="nav-clock"></span>
+        <span class="text-accent">//</span>
+        <span>AVAILABLE FOR WORK</span>
+      </div>
+      <div class="text-black/50">
+        <span class="text-accent font-bold blink">●</span> ONLINE
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero-section fade-in-section">
+      <div class="absolute top-10 right-6 text-xs text-black/20 hidden md:block">
+        SYSTEM: SRE_PIPELINE<br>
+        STATUS: <span class="text-accent">OPERATIONAL</span>
+      </div>
+      <div class="max-w-5xl">
+        <h1 class="hero-headline font-display reveal-text" id="hero-headline">
+          INCIDENTS DON'T WAIT.<br>
+          AI SHOULDN'T EITHER.
+        </h1>
+        <div class="hero-sidebar-line fade-in-section grid md:grid-cols-12 gap-8">
+          <div class="md:col-span-8">
+            <p class="text-lg md:text-xl text-black/70 leading-relaxed mb-8">
+              <span class="text-accent">//</span> SRE Engineer building AI-powered incident pipelines. From alert to classification to Telegram — in seconds, not hours.
+            </p>
+            <a href="#try-it" class="cta-button">
+              TRY THE DEMO
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 01: WHAT I DO ============ -->
+    <section class="section-grid fade-in-section">
+      <div class="section-number font-display">01</div>
+      <div class="section-content">
+        <h2 class="font-display text-4xl md:text-5xl uppercase mb-12 tracking-tight">
+          WHAT I<br>
+          <span class="text-accent">ACTUALLY DO</span>
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Pillar 1 -->
+          <div class="border border-black/10 p-6">
+            <div class="text-accent text-xs mb-4 uppercase tracking-widest">[PILLAR_01]</div>
+            <h3 class="font-display text-xl uppercase mb-3">SRE / Observability</h3>
+            <p class="text-black/50 text-sm">Prometheus + Grafana. Alert routing. On-call rotation management. 20+ years keeping systems alive — from trading floors to crypto exchanges.</p>
+          </div>
+          <!-- Pillar 2 -->
+          <div class="border border-black/10 p-6">
+            <div class="text-accent text-xs mb-4 uppercase tracking-widest">[PILLAR_02]</div>
+            <h3 class="font-display text-xl uppercase mb-3">AI / LLM Routing</h3>
+            <p class="text-black/50 text-sm">Multi-model orchestration. OpenAI + Anthropic pipeline. Incident → LLM Classify → Severity Score → Route to Telegram. Human-in-the-loop when it matters.</p>
+          </div>
+          <!-- Pillar 3 -->
+          <div class="border border-black/10 p-6">
+            <div class="text-accent text-xs mb-4 uppercase tracking-widest">[PILLAR_03]</div>
+            <h3 class="font-display text-xl uppercase mb-3">Cloud Infra</h3>
+            <p class="text-black/50 text-sm">AWS + GCP. GPU clusters (~200 GPUs). Terraform, Pulumi. Real estate automation. Python/FastAPI for everything that moves.</p>
+          </div>
+        </div>
+        <!-- Stats row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+          <div class="stat-card border border-black/10 p-6 relative">
+            <div class="stat-card-label text-accent">[UPTIME]</div>
+            <div class="stat-number font-display text-5xl text-accent mb-2 counter" data-target="99" data-suffix=".9%">0.9%</div>
+            <div class="stat-desc">TRACK RECORD</div>
+          </div>
+          <div class="stat-card border border-black/10 p-6 relative">
+            <div class="stat-card-label text-accent">[YEARS]</div>
+            <div class="stat-number font-display text-5xl text-accent mb-2 counter" data-target="20" data-suffix="+">0+</div>
+            <div class="stat-desc">INFRASTRUCTURE</div>
+          </div>
+          <div class="stat-card border border-black/10 p-6 relative">
+            <div class="stat-card-label text-accent">[GPUS]</div>
+            <div class="stat-number font-display text-5xl text-accent mb-2 counter" data-target="200" data-suffix="">0</div>
+            <div class="stat-desc">MANAGED</div>
+          </div>
+          <div class="stat-card border border-black/10 p-6 relative">
+            <div class="stat-card-label text-accent">[MODELS]</div>
+            <div class="stat-number font-display text-5xl text-accent mb-2 counter" data-target="5" data-suffix="">0</div>
+            <div class="stat-desc">IN PIPELINE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02: AI SRE PIPELINE ============ -->
+    <section class="section-grid fade-in-section">
+      <div class="section-number font-display">02</div>
+      <div class="section-content">
+        <h2 class="font-display text-4xl md:text-5xl uppercase mb-12 tracking-tight">
+          THE <span class="text-accent">PIPELINE</span>
+        </h2>
+        <p class="text-black/60 mb-12 max-w-3xl">
+          Every incident follows the same path. The question is: who's reading it — a human at 3AM, or an AI that classified it in 2 seconds?
+        </p>
+        <!-- Pipeline visual -->
+        <div class="grid md:grid-cols-5 gap-0 border border-black/10">
+          <div class="p-6 border-b md:border-b-0 md:border-r border-black/10 bg-accent/5">
+            <div class="text-accent text-xs uppercase tracking-widest mb-2">STEP 01</div>
+            <h4 class="font-display text-lg uppercase mb-2">Incident</h4>
+            <p class="text-black/40 text-xs">Prometheus alert. PagerDuty webhook. Log anomaly.</p>
+          </div>
+          <div class="p-6 border-b md:border-b-0 md:border-r border-black/10">
+            <div class="text-accent text-xs uppercase tracking-widest mb-2">STEP 02</div>
+            <h4 class="font-display text-lg uppercase mb-2">Classify</h4>
+            <p class="text-black/40 text-xs">LLM analyzes context. Category: infra / app / security / deps.</p>
+          </div>
+          <div class="p-6 border-b md:border-b-0 md:border-r border-black/10 bg-accent/5">
+            <div class="text-accent text-xs uppercase tracking-widest mb-2">STEP 03</div>
+            <h4 class="font-display text-lg uppercase mb-2">Score</h4>
+            <p class="text-black/40 text-xs">Severity P1-P4. Confidence score. Impact radius estimation.</p>
+          </div>
+          <div class="p-6 border-b md:border-b-0 md:border-r border-black/10">
+            <div class="text-accent text-xs uppercase tracking-widest mb-2">STEP 04</div>
+            <h4 class="font-display text-lg uppercase mb-2">Route</h4>
+            <p class="text-black/40 text-xs">Telegram → on-call team. Slack → #incidents. Email → management.</p>
+          </div>
+          <div class="p-6 bg-accent/5">
+            <div class="text-accent text-xs uppercase tracking-widest mb-2">STEP 05</div>
+            <h4 class="font-display text-lg uppercase mb-2">Auto-Fix</h4>
+            <p class="text-black/40 text-xs">Known remediation? Execute. Unknown? Human-in-the-loop. Learn.</p>
+          </div>
+        </div>
+        <div class="highlight-block mt-8 max-w-3xl">
+          > INCIDENT → LLM CLASSIFY → SEVERITY SCORE → ROUTE TO TELEGRAM → AUTO-FIX IF KNOWN<br>
+          > AVG RESPONSE TIME: <span class="text-accent">2.3s</span> vs 15min human triage
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03: TRY IT (INTERACTIVE DEMO) ============ -->
+    <section id="try-it" class="section-grid fade-in-section">
+      <div class="section-number font-display">03</div>
+      <div class="section-content">
+        <h2 class="font-display text-4xl md:text-5xl uppercase mb-4 tracking-tight">
+          <span class="text-accent">TRY</span> IT
+        </h2>
+        <p class="text-black/60 mb-8 max-w-2xl">
+          Paste an incident description. The AI will classify it, score severity, and show the routing decision — just like the real pipeline.
+        </p>
+
+        <!-- Demo terminal -->
+        <div class="border border-black/10 bg-black/5">
+          <!-- Terminal header -->
+          <div class="border-b border-black/10 px-4 py-2 flex items-center gap-2 text-xs text-black/40 uppercase tracking-widest">
+            <span class="pulse-dot w-2 h-2 bg-accent inline-block"></span>
+            ai-sre-classifier // v0.1
+          </div>
+          <!-- Input area -->
+          <div class="p-6">
+            <textarea id="incident-input" class="input-area w-full h-32 bg-transparent border border-black/10 p-4 font-mono text-sm resize-none focus:outline-none focus:border-accent transition-colors" placeholder="Describe an incident...&#10;&#10;Example: Production API returning 503 errors. Database connection pool exhausted. 23% of requests failing. Started 15 minutes ago."></textarea>
+            <div class="flex items-center gap-4 mt-4">
+              <button id="classify-btn" class="cta-button text-sm py-3 px-6" onclick="classifyIncident()">
+                > CLASSIFY
+              </button>
+              <button class="text-black/40 hover:text-black/70 text-xs uppercase tracking-widest transition-colors" onclick="loadExample()">
+                [LOAD EXAMPLE]
+              </button>
+              <span id="classify-status" class="text-xs text-black/30 ml-auto"></span>
+            </div>
+          </div>
+          <!-- Output area -->
+          <div id="output-area" class="border-t border-black/10 p-6 font-mono text-sm hidden">
+            <div id="output-lines" class="space-y-1"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ 04: TRACK RECORD ============ -->
+    <section class="section-grid fade-in-section">
+      <div class="section-number font-display">04</div>
+      <div class="section-content">
+        <h2 class="font-display text-4xl md:text-5xl uppercase mb-16 tracking-tight">
+          TRACK <span class="text-accent">RECORD</span>
+        </h2>
+        <div>
+          <!-- Case 1 -->
+          <div class="case-row">
+            <div class="flex flex-col md:flex-row gap-6 md:items-start">
+              <div class="case-tag">[CBOE]</div>
+              <div>
+                <h3 class="font-display text-2xl uppercase mb-2">Options Trading Platform</h3>
+                <p class="text-black/50 font-mono text-sm">Low-latency options trading. Real-time risk calculations. 99.99% uptime requirement. Sub-millisecond response times for market data feeds.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Case 2 -->
+          <div class="case-row">
+            <div class="flex flex-col md:flex-row gap-6 md:items-start">
+              <div class="case-tag">[CRYPTO]</div>
+              <div>
+                <h3 class="font-display text-2xl uppercase mb-2">Crypto Exchange Infrastructure</h3>
+                <p class="text-black/50 font-mono text-sm">High-frequency trading infrastructure. Multi-region deployment. Automated failover. 24/7 on-call automation with AI triage.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Case 3 -->
+          <div class="case-row">
+            <div class="flex flex-col md:flex-row gap-6 md:items-start">
+              <div class="case-tag">[GPU_OPS]</div>
+              <div>
+                <h3 class="font-display text-2xl uppercase mb-2">GPU Cluster Operations</h3>
+                <p class="text-black/50 font-mono text-sm">~200 GPUs for ML training. Automated health checks. Thermal monitoring. Job scheduling and preemption. Cost optimization across spot instances.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Case 4 -->
+          <div class="case-row">
+            <div class="flex flex-col md:flex-row gap-6 md:items-start">
+              <div class="case-tag">[REAL_ESTATE]</div>
+              <div>
+                <h3 class="font-display text-2xl uppercase mb-2">Real Estate Automation</h3>
+                <p class="text-black/50 font-mono text-sm">End-to-end pipeline: data collection → analysis → reporting. Browser automation. Document processing. Multi-source data aggregation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05: CTA ============ -->
+    <section id="contact" class="section-grid fade-in-section">
+      <div class="section-number font-display">05</div>
+      <div class="section-content">
+        <div class="text-center mb-12">
+          <div class="live-badge">
+            <span class="blink mr-2">●</span>AVAILABLE FOR WORK
+          </div>
+          <h2 class="font-display text-5xl md:text-7xl uppercase mb-6">LET'S <span class="text-accent">TALK</span></h2>
+          <p class="text-black/50 max-w-xl mx-auto">Based in Lisbon, Portugal. Open to remote EU/UK. SRE + AI roles. Consulting on incident automation pipelines.</p>
+        </div>
+        <div class="max-w-2xl mx-auto">
+          <div class="border border-black/10 bg-black/5 p-8 md:p-12">
+            <div class="space-y-6">
+              <!-- Contact links -->
+              <div class="border-b border-black/10 pb-4 flex justify-between items-center hover:bg-black/5 px-2 transition-colors">
+                <span class="text-accent text-sm">// EMAIL</span>
+                <a href="mailto:hello@example.com" class="font-mono text-sm hover:text-accent transition-colors">hello@example.com</a>
+              </div>
+              <div class="border-b border-black/10 pb-4 flex justify-between items-center hover:bg-black/5 px-2 transition-colors">
+                <span class="text-accent text-sm">// LINKEDIN</span>
+                <a href="#" class="font-mono text-sm hover:text-accent transition-colors">linkedin.com/in/yourprofile</a>
+              </div>
+              <div class="border-b border-black/10 pb-4 flex justify-between items-center hover:bg-black/5 px-2 transition-colors">
+                <span class="text-accent text-sm">// TELEGRAM</span>
+                <a href="#" class="font-mono text-sm hover:text-accent transition-colors">@yourtelegram</a>
+              </div>
+              <div class="flex justify-between items-center hover:bg-black/5 px-2 transition-colors">
+                <span class="text-accent text-sm">// GITHUB</span>
+                <a href="#" class="font-mono text-sm hover:text-accent transition-colors">github.com/yourrepo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      &copy; 2026 SRE + AI. All rights reserved.<br>
+      Design: Engineering_Terminal_V1
+    </footer>
+
+  </main>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // --- Clock ---
+    function updateClock() {
+      const el = document.getElementById('nav-clock');
+      if (!el) return;
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+      el.textContent = h + ':' + m + ' // ' + months[now.getMonth()] + ' ' + now.getDate();
+    }
+    updateClock();
+    setInterval(updateClock, 10000);
+
+    // --- Hero word-by-word reveal ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const headline = document.getElementById('hero-headline');
+      if (!headline) return;
+      const lines = headline.innerHTML.split(/<br[^>]*>/i);
+      headline.innerHTML = '';
+      let wordIndex = 0;
+      lines.forEach((line, lineIdx) => {
+        const words = line.trim().split(/\s+/).filter(Boolean);
+        words.forEach((word, i) => {
+          const span = document.createElement('span');
+          span.textContent = word;
+          span.style.transitionDelay = (wordIndex * 60) + 'ms';
+          headline.appendChild(span);
+          if (i < words.length - 1) headline.appendChild(document.createTextNode(' '));
+          setTimeout(() => span.classList.add('visible'), 100);
+          wordIndex++;
+        });
+        if (lineIdx < lines.length - 1) headline.appendChild(document.createElement('br'));
+      });
+    });
+
+    // --- Scroll fade-in + counters ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          entry.target.querySelectorAll('.counter').forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            const update = () => {
+              current += increment;
+              if (current < target) {
+                counter.innerText = Math.ceil(current) + suffix;
+                requestAnimationFrame(update);
+              } else {
+                counter.innerText = target + suffix;
+              }
+            };
+            update();
+            counter.classList.remove('counter');
+          });
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in-section').forEach(s => observer.observe(s));
+
+    // --- Incident Demo ---
+    const incidentExamples = [
+      "Production API returning 503 errors. Database connection pool exhausted. 23% of requests failing. Started 15 minutes ago.",
+      "Disk usage at 98% on primary DB server. Write latency increased 5x. Replication lag growing. No auto-scaling configured.",
+      "Suspicious login attempts detected from 3 different countries within 5 minutes. Account lockout policy not triggered. Potential credential stuffing attack.",
+      "Kubernetes pod CrashLoopBackOff on payment-service. OOMKilled. Memory limit 512Mi, actual usage 1.2Gi. No recent deployments.",
+      "SSL certificate expires in 48 hours on cdn.example.com. Auto-renewal failed. ACME challenge DNS record missing."
+    ];
+
+    function loadExample() {
+      const input = document.getElementById('incident-input');
+      input.value = incidentExamples[Math.floor(Math.random() * incidentExamples.length)];
+      input.focus();
+    }
+
+    // Simulated classification (works without backend)
+    function classifyIncident() {
+      const input = document.getElementById('incident-input').value.trim();
+      if (!input) return;
+
+      const btn = document.getElementById('classify-btn');
+      const status = document.getElementById('classify-status');
+      const outputArea = document.getElementById('output-area');
+      const outputLines = document.getElementById('output-lines');
+
+      btn.disabled = true;
+      btn.textContent = '> PROCESSING...';
+      status.textContent = 'Analyzing incident...';
+      outputArea.classList.remove('hidden');
+      outputLines.innerHTML = '';
+
+      // Simple rule-based classifier (demo mode)
+      const lower = input.toLowerCase();
+      let category, severity, confidence, route, action;
+
+      if (lower.includes('503') || lower.includes('connection pool') || lower.includes('failing') || lower.includes('crashloop') || lower.includes('oom')) {
+        category = 'INFRASTRUCTURE';
+        severity = 'P1';
+        confidence = 92;
+        route = 'Telegram → #oncall-primary';
+        action = 'Auto-restart pod + scale connection pool';
+      } else if (lower.includes('disk') || lower.includes('ssl') || lower.includes('certificate') || lower.includes('latency')) {
+        category = 'INFRASTRUCTURE';
+        severity = 'P2';
+        confidence = 88;
+        route = 'Telegram → #infra-team';
+        action = 'Manual review recommended';
+      } else if (lower.includes('suspicious') || lower.includes('attack') || lower.includes('login') || lower.includes('credential')) {
+        category = 'SECURITY';
+        severity = 'P1';
+        confidence = 95;
+        route = 'Telegram → #security-oncall';
+        action = 'Block IPs + force password reset';
+      } else if (lower.includes('payment') || lower.includes('billing') || lower.includes('transaction')) {
+        category = 'APPLICATION';
+        severity = 'P1';
+        confidence = 90;
+        route = 'Telegram → #payments-team';
+        action = 'Enable circuit breaker + fallback';
+      } else {
+        category = 'APPLICATION';
+        severity = 'P3';
+        confidence = 75;
+        route = 'Slack → #incidents';
+        action = 'Human triage required';
+      }
+
+      const lines = [
+        { text: '> INPUT_RECEIVED: ' + input.substring(0, 80) + (input.length > 80 ? '...' : ''), delay: 300 },
+        { text: '> CLASSIFYING...', delay: 600 },
+        { text: '', delay: 800 },
+        { text: '> CATEGORY:    ' + category, delay: 1000, color: category === 'SECURITY' ? '#dc2626' : '#f5a623' },
+        { text: '> SEVERITY:    ' + severity, delay: 1200, color: severity === 'P1' ? '#dc2626' : severity === 'P2' ? '#f5a623' : '#0a0a0f' },
+        { text: '> CONFIDENCE:  ' + confidence + '%', delay: 1400 },
+        { text: '> ROUTE:       ' + route, delay: 1600, color: '#f5a623' },
+        { text: '> ACTION:      ' + action, delay: 1800 },
+        { text: '', delay: 1900 },
+        { text: '> STATUS: CLASSIFIED in ' + (Math.random() * 1.5 + 1.5).toFixed(1) + 's', delay: 2100, color: '#16a34a' },
+      ];
+
+      lines.forEach(line => {
+        setTimeout(() => {
+          const div = document.createElement('div');
+          div.textContent = line.text;
+          if (line.color) div.style.color = line.color;
+          div.style.opacity = '0';
+          div.style.transform = 'translateX(-10px)';
+          div.style.transition = 'opacity 0.3s, transform 0.3s';
+          outputLines.appendChild(div);
+          requestAnimationFrame(() => {
+            div.style.opacity = '1';
+            div.style.transform = 'translateX(0)';
+          });
+        }, line.delay);
+      });
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = '> CLASSIFY';
+        status.textContent = 'Done. Try another incident.';
+      }, 2400);
+    }
+  </script>
+
+</body>
+</html>
