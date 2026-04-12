@@ -8,6 +8,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+<style>
+  /* Fix SYSTEM tag overlay */
+  @media (min-width: 768px) {
+    .md-system-tag { display: block !important; }
+  }
+  /* Fix hero fade-in - hero must be visible immediately */
+  .hero-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  /* Ensure hero content above the system tag */
+  .hero-sidebar-line {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-headline {
+    position: relative;
+    z-index: 1;
+  }
+</style>
 </head>
 <body>
 
@@ -32,12 +53,12 @@
   <main class="main-content">
 
     <!-- ============ HERO ============ -->
-    <section class="hero-section fade-in-section">
-      <div class="absolute top-10 right-6 text-xs text-black/20 hidden md:block">
-        SYSTEM: SRE_PIPELINE<br>
-        STATUS: <span class="text-accent">OPERATIONAL</span>
-      </div>
-      <div class="max-w-5xl">
+    <section class="hero-section">
+      <div class="max-w-5xl" style="position:relative;">
+        <div style="position:absolute;top:0;right:0;font-size:0.7rem;color:rgba(0,0,0,0.2);text-align:right;line-height:1.6;z-index:0;display:none;" class="md-system-tag">
+          SYSTEM: SRE_PIPELINE<br>
+          STATUS: <span style="color:#f5a623;">OPERATIONAL</span>
+        </div>
         <h1 class="hero-headline font-display reveal-text" id="hero-headline">
           INCIDENTS DON'T WAIT.<br>
           AI SHOULDN'T EITHER.
