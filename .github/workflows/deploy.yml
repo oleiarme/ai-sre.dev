@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Test & Deploy to GitHub Pages
 
 on:
   push:
@@ -15,7 +15,54 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: static/
+          css: true
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: |
+            --verbose
+            --no-progress
+            --exclude-loopback
+            --exclude "localhost"
+            --exclude "t.me"
+            --exclude "oleiarme.github.io"
+            static/index.html
+          fail: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.14.x
+
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun \
+            --upload.target=temporary-public-storage \
+            --collect.staticDistDir=./static \
+            --assert.preset=lighthouse:recommended \
+            --assert.assertions.categories:performance=["warn",{"minScore":0.7}] \
+            --assert.assertions.categories:accessibility=["error",{"minScore":0.8}] \
+            --assert.assertions.categories:seo=["warn",{"minScore":0.8}]
+        continue-on-error: true
+
   deploy:
+    name: Deploy to GitHub Pages
+    needs: test
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
