@@ -387,6 +387,15 @@ let inputBuffer = '';
 document.addEventListener('keydown', (e) => {
   if (isTyping) return;
 
+  // Allow system shortcuts (Ctrl+C, Ctrl+V, etc.)
+  if (e.ctrlKey || e.metaKey) {
+    if (e.key === 'v') return; // Let 'paste' event handle it
+    if (e.key === 'c' && !window.getSelection().toString()) {
+      // Optional: handle Ctrl+C like in a real terminal if no text is selected
+    }
+    if (e.key !== 'a' && e.key !== 'c') return; 
+  }
+
   if (e.key === 'Enter') {
     const cmd = inputBuffer;
     inputBuffer = '';
@@ -416,6 +425,16 @@ document.addEventListener('keydown', (e) => {
     inputBuffer += e.key;
     updateInputDisplay();
   }
+});
+
+// Handle Paste
+document.addEventListener('paste', (e) => {
+  if (isTyping) return;
+  
+  e.preventDefault();
+  const text = (e.clipboardData || window.clipboardData).getData('text');
+  inputBuffer += text;
+  updateInputDisplay();
 });
 
 function updateInputDisplay() {
