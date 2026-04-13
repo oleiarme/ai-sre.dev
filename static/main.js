@@ -175,17 +175,79 @@ Staff/Principal SRE roles, AI Platform Engineering.</span>
   help: () => `
 <span class="heading">Available commands:</span>
 
-  <span class="bright">about</span>      — Who I am
-  <span class="bright">skills</span>     — Tech stack & expertise
-  <span class="bright">experience</span> — Work history
-  <span class="bright">projects</span>   — Open-source & side projects
-  <span class="bright">classify</span>   — <span class="amber">DEMO: AI Incident Classifier</span>
-  <span class="bright">contact</span>    — Get in touch
-  <span class="bright">help</span>       — This message
-  <span class="bright">clear</span>      — Clear terminal
-  <span class="bright">sudo hire me</span> — 😉
+    <span class="bright">about</span>      — Who I am
+    <span class="bright">skills</span>     — Tech stack & expertise
+    <span class="bright">experience</span> — Work history
+    <span class="bright">projects</span>   — Open-source & side projects
+    <span class="bright">classify</span>   — <span class="amber">DEMO: AI Incident Classifier</span>
+    <span class="bright">contact</span>    — Get in touch
+    <span class="bright">help</span>       — This message
+    <span class="bright">clear</span>      — Clear terminal
 
-<span class="dim">Tip: Click the buttons below or type a command + Enter</span>
+  <span class="dim">Tip: Click the buttons below or type a command + Enter</span>
+  `,
+
+  classify: (args) => {
+    if (!args || args.length === 0) {
+      return `
+<span class="red">Error: No incident description provided.</span>
+Usage: <span class="bright">classify</span> "incident description"
+Example: <span class="dim">classify "Database connection timeout in us-east-1"</span>
+`;
+    }
+
+    const description = args.join(' ').toLowerCase();
+
+    let category = "Unknown/General";
+    let severity = "Medium";
+    let recommendation = "Escalate to on-call engineer.";
+
+    if (description.includes('db') || description.includes('database') || description.includes('sql')) {
+      category = "Database Tier";
+      severity = "High";
+      recommendation = "Check RDS metrics and connection pool limits.";
+    } else if (description.includes('404') || description.includes('500') || description.includes('timeout')) {
+      category = "API Gateway / Frontend";
+      severity = "High";
+      recommendation = "Review load balancer logs and target group health.";
+    } else if (description.includes('slow') || description.includes('latency')) {
+      category = "Performance";
+      severity = "Low";
+      recommendation = "Analyze trace data in Jaeger/Datadog.";
+    } else if (description.includes('disk') || description.includes('space') || description.includes('memory')) {
+      category = "Infrastructure / Node";
+      severity = "Critical";
+      recommendation = "Check K8s node pressure and PVC usage.";
+    }
+
+    return `
+<span class="heading">AI Incident Analysis Report</span>
+<span class="dim">──────────────────────────────────────────────</span>
+<span class="bright">Input:</span> "${args.join(' ')}"
+
+<span class="bright">Category:</span>    <span class="amber">${category}</span>
+<span class="bright">Severity:</span>    <span class="red">${severity}</span>
+<span class="bright">Confidence:</span>  <span class="boot-ok">89.4%</span>
+
+<span class="bright">AI Recommendation:</span>
+${recommendation}
+<span class="dim">──────────────────────────────────────────────</span>
+`;
+  },
+
+  contact: () => `
+<span class="heading">╔══════════════════════════════════════╗</span>
+<span class="heading">║         Contact                     ║</span>
+<span class="heading">╚══════════════════════════════════════╝</span>
+
+<span class="bright">Email:</span>    <a class="link" href="mailto:oleksandr.v.skrypnikov@gmail.com">oleksandr.v.skrypnikov@gmail.com</a>
+<span class="bright">GitHub:</span>   <a class="link" href="https://github.com/oleiarme/ai-sre.dev">github.com/oleiarme/ai-sre.dev</a>
+<span class="bright">LinkedIn:</span> <a class="link" href="https://linkedin.com/in/oleksandr-skrypnikov-ai">linkedin.com/in/oleksandr-skrypnikov-ai</a>
+<span class="bright">Telegram:</span> <a class="link" href="https://t.me/XelaSk">@XelaSk</a>
+
+<span class="dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="amber">Based in Lisbon, Portugal. Open to remote EU/UK.
+Staff/Principal SRE roles, AI Platform Engineering.</span>
 `,
 
   clear: () => {
@@ -273,10 +335,13 @@ async function bootSequence() {
 async function executeCommand(cmd) {
   if (isTyping) return;
 
-  const trimmed = cmd.trim();
-  if (!trimmed) return;
+  const parts = cmd.trim().split(/\s+/);
+  const baseCmd = parts[0].toLowerCase();
+  const args = parts.slice(1);
 
-  commandHistory.push(trimmed);
+  if (!baseCmd) return;
+
+  commandHistory.push(cmd);
   historyIndex = commandHistory.length;
 
   // Echo command
@@ -286,19 +351,16 @@ async function executeCommand(cmd) {
   output.appendChild(echo);
 
   // Find command
-  const [cmdName, ...args] = trimmed.toLowerCase().split(/\s+/);
-  const handler = COMMANDS[cmdName];
+  const handler = COMMANDS[baseCmd];
   if (handler) {
-    // Pass original case for arguments (useful for classify)
-    const argString = trimmed.split(/\s+/).slice(1).join(' ');
-    const result = handler(argString);
+    const result = handler(args);
     if (result) {
       await typeOutput(result);
     }
   } else {
     const errDiv = document.createElement('div');
     errDiv.className = 'output-line';
-    errDiv.innerHTML = `<span class="red">Command not found: ${escapeHtml(trimmed)}</span>\n<span class="dim">Type <span class="bright">help</span> for available commands.</span>`;
+    errDiv.innerHTML = `<span class="red">Command not found: ${escapeHtml(baseCmd)}</span>\n<span class="dim">Type <span class="bright">help</span> for available commands.</span>`;
     output.appendChild(errDiv);
   }
 
