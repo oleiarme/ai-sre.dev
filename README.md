@@ -1,55 +1,55 @@
 # AI SRE Terminal
 
-**[🚀 LIVE DEMO](https://oleiarme.github.io/ai-sre.dev/)** — SRE + AI сайт-визитка с интерактивным демо классификации инцидентов.
+**[🚀 LIVE DEMO](https://oleiarme.github.io/ai-sre.dev/)** — An interactive SRE + AI portfolio site with a live incident classification demo.
 
-Проект создан для демонстрации навыков SRE-инженера по интеграции LLM в пайплайны обработки инцидентов.
+Built to showcase hands-on experience integrating LLMs into incident response pipelines — from alert ingestion to classification, routing, and automated remediation.
 
-## GitHub Pages / Деплой
+## Deploy
 
-Этот проект автоматически развертывается на GitHub Pages с помощью **GitHub Actions**. 
-- Весь фронтенд с логикой симуляции (без бэкенда) находится в папке `static/`.
-- GitHub Action копирует содержимое `static/` в корень сайта.
+This project is automatically deployed to **GitHub Pages** via **GitHub Actions**.
 
-## Запуск на Windows
+- All frontend logic (no backend required) lives in `static/`
+- The GitHub Actions workflow copies `static/` to the site root on every push to `main`
 
-### Вариант 1: Python (рекомендуется для API)
+## Running Locally
+
+### Option 1: Full stack with Python API
 
 ```bash
-# 1. Установи Python 3.10+
-# 2. Открой терминал в папке проекта
+# 1. Requires Python 3.10+
 cd ai-sre.dev
 
-# 3. Установи зависимости
+# 2. Install dependencies
 pip install fastapi uvicorn
 
-# 4. Запусти сервер
+# 3. Start the server
 python api/main.py
 ```
 
-Открой http://localhost:8000
+Open http://localhost:8000
 
-### Вариант 2: Только фронтенд (без бэкенда)
+### Option 2: Frontend only (no backend)
 
-Просто открой `static/index.html` в браузере.
-Демо работает на встроенном JS-классификаторе (симуляция).
+Open `static/index.html` directly in a browser.  
+The classifier demo runs entirely in JS (simulated).
 
-## Структура
+## Project Structure
 
 ```
 ai-sre.dev/
 ├── .github/workflows/
-│   └── deploy.yml       # Авто-деплой на GitHub Pages
+│   └── deploy.yml       # Auto-deploy to GitHub Pages
 ├── api/
-│   └── main.py          # FastAPI бэкенд (POST /classify)
+│   └── main.py          # FastAPI backend (POST /classify)
 ├── static/
-│   ├── index.html       # Полный сайт с встроенным JS
-│   └── styles.css       # Стили (без зависимостей)
+│   ├── index.html       # Full site with embedded JS
+│   └── styles.css       # Styles (zero dependencies)
 └── README.md
 ```
 
 ## API
 
-POST /classify — классификация инцидента (только при запуске бэкенда локально)
+`POST /classify` — classify an incident (requires local backend)
 
 ```bash
 curl -X POST http://localhost:8000/classify \
@@ -57,7 +57,8 @@ curl -X POST http://localhost:8000/classify \
   -d '{"text": "API returning 503, crashloop on pod X, connection pool exhausted"}'
 ```
 
-Ответ:
+Response:
+
 ```json
 {
   "category": "INFRASTRUCTURE",
