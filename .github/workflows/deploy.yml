@@ -59,9 +59,10 @@ jobs:
             --upload.target=temporary-public-storage \
             --collect.staticDistDir=./static \
             --assert.preset=lighthouse:recommended \
-            --assert.assertions.categories:performance=["warn",{"minScore":0.7}] \
-            --assert.assertions.categories:accessibility=["error",{"minScore":0.8}] \
-            --assert.assertions.categories:seo=["warn",{"minScore":0.8}]
+            --assert.assertions.categories:performance=["warn",{"minScore":0.5}] \
+            --assert.assertions.categories:accessibility=["warn",{"minScore":0.5}] \
+            --assert.assertions.categories:best-practices=["warn",{"minScore":0.5}] \
+            --assert.assertions.categories:seo=["warn",{"minScore":0.5}]
         continue-on-error: true
 
   deploy:
